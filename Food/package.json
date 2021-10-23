@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Roman Popil",
   "license": "ISC",
   "browserslist": [
     "> 1%",
