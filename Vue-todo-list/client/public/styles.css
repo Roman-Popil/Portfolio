@@ -1,0 +1,284 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #27292d;
+  color: white;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  margin: 20px 0 40px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+form button {
+  height: 48px;
+  box-shadow: none;
+  outline: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+input {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: #a0a4d9;
+  border: 1px solid #a0a4d9;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border-radius: 6px;
+  color: #27292d;
+  padding: 10px 5px;
+}
+
+h2 {
+  font-size: 22px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 6px;
+  font-weight: 600 ;
+}
+
+ul {
+  padding: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+span {
+  cursor: pointer;
+}
+
+li button {
+  font-size: 16px;
+  padding: 6px 8px;
+}
+
+.btn-footer {
+  margin: 5px;
+}
+
+.list-elem {
+  background-color: #27292d;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  color: inherit;
+}
+
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+button:active,
+button:focus,
+input:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+input[type="text"],
+label {
+  font-size: 20px;
+}
+
+.new-todo:focus {
+  border-color: #a0a4d9;
+  box-shadow: 0 1px 1px #a0a4d9 inset, 0 0 8px #a0a4d9 !important;
+}
+
+.footer-text {
+  font-size: 1.25rem;
+  text-align: center;
+  color: darkgray;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: darkgray;
+}
+
+.swagger {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-2.5px);
+  }
+}
+@-moz-keyframes bounce {
+  0%,
+  100% {
+    -moz-transform: translateY(0);
+  }
+  50% {
+    -moz-transform: translateY(-2.5px);
+  }
+}
+@-o-keyframes bounce {
+  0%,
+  100% {
+    -o-transform: translateY(0);
+  }
+  50% {
+    -o-transform: translateY(-2.5px);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #27292d;
+  color: white;
+}
+
+#app {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+form button {
+  height: 48px;
+  box-shadow: none;
+  outline: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+input {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: #a0a4d9;
+  border: 1px solid #a0a4d9;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border-radius: 6px;
+}
+
+h2 {
+  font-size: 22px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 6px;
+}
+
+ul {
+  padding: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  padding: 12px 24px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+span {
+  cursor: pointer;
+}
+
+.done {
+  opacity: 0.4;
+}
+
+li button {
+  font-size: 12px;
+  padding: 6px;
+}
+
+h4 {
+  text-align: center;
+  opacity: 0.5;
+  margin: 0;
+} */

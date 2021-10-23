@@ -1,0 +1,196 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "description": "Documentation for API",
+        "version": "1.0.0"
+    },
+    "servers": [{
+        "url": "http://localhost:5000/api"
+    }],
+    "security": [{
+        "bearerAuth": []
+    }],
+    "components": {
+        "schemas": {
+            "Todo": {
+                "type": "object",
+                "description": "TodoList",
+                "properties": {
+                    "_id": {
+                        "type": "ObjectId",
+                        "example": "607421b518477308ec1969da"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Todo task",
+                        "required": true,
+                        "example": "Make a dinner"
+                    },
+                    "completed": {
+                        "type": "boolean",
+                        "description": "Is task completed",
+                        "required": true,
+                        "example": false
+                    }
+                }
+            }
+        },
+        "responses": {
+            "serverError": {
+                "description": "server error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "string",
+                            "example": "Something went wrong"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/todos": {
+            "get": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Get Todo List",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/serverError"
+                    }
+                }
+            }
+        },
+        "/todo": {
+            "post": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Create TodoList",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "example": "Walk with a dog"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Todo"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/serverError"
+                    }
+                }
+            }
+        },
+        "/todo/:id": {
+            "delete": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Delete Todo taks from list",
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "todo id",
+                    "schema": {
+                        "type": "ObjectId"
+                    },
+                    "required": true
+                }],
+                "responses": {
+                    "204": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/serverError"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Todo"
+                ],
+                "summary": "Update TodoList",
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "todo id",
+                    "schema": {
+                        "type": "ObjectId"
+                    },
+                    "required": true
+                }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "example": "Go to sleep"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Todo"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/serverError"
+                    }
+                }
+            }
+        }
+    }
+}
